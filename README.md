@@ -24,12 +24,16 @@ Asegúrate de tener instalados los siguientes elementos antes de ejecutar la apl
    npm install
    ```
 
-3. **Ejecutar entorno de desarrollo:**
+3. **Configurar variables de entorno:**
+
+   Renombra el archivo .env-example -> .env y añade la url de tu base de datos MySQL
+
+4. **Ejecutar entorno de desarrollo:**
    ```bash
    npm run dev
    ```
 
-4. **Ejecutar entorno de desarrollo serverless:**
+5. **Ejecutar entorno de desarrollo serverless:**
    ```bash
    npm serverless:dev
    ```

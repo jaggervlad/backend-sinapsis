@@ -2,6 +2,8 @@
 service: SinapsisRestApi
 frameworkVersion: "3"
 
+useDotenv: true
+
 provider:
   name: aws
   runtime: nodejs18.x
@@ -11,6 +13,7 @@ provider:
 
 plugins:
   - serverless-offline
+  - serverless-dotenv-plugin
 
 functions:
   hello:
@@ -20,7 +23,7 @@ functions:
       - http: ANY /
     environment:
       PORT: 3000
-      DATABASE_URL: mysql://h2ue93o26ni3tipsbkhq:pscale_pw_V0heGJPC8gVeanbBIm5XnIuEAzuulVuqfG3TnFwQj9m@aws.connect.psdb.cloud/platform-test?ssl={"rejectUnauthorized":true}
+      DATABASE_URL: ${env:DATABASE_URL}
 
 
 

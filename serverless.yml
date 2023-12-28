@@ -1,0 +1,26 @@
+
+service: SinapsisRestApi
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+  region: us-east-1
+  memorySize: 2048
+
+plugins:
+  - serverless-offline
+
+functions:
+  hello:
+    handler: handler.startApp
+    events:
+      - http: ANY /{proxy+}
+      - http: ANY /
+    environment:
+      PORT: 3000
+      DATABASE_URL: mysql://h2ue93o26ni3tipsbkhq:pscale_pw_V0heGJPC8gVeanbBIm5XnIuEAzuulVuqfG3TnFwQj9m@aws.connect.psdb.cloud/platform-test?ssl={"rejectUnauthorized":true}
+
+
+
